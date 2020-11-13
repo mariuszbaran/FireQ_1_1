@@ -1,0 +1,25 @@
+﻿<Application x:Class="FireQ_1_1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FireQ_1_1"
+             xmlns:vm="clr-namespace:FireQ_1_1.ViewModel"
+             xmlns:v="clr-namespace:FireQ_1_1.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+            <v:LoginView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <v:HomeView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+            <v:SettingsView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:LocalizationViewModel}">
+            <v:LocalizationView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <vm:MainViewModel x:Key="MainViewModel"/>
+
+    </Application.Resources>
+</Application>
