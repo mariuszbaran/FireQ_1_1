@@ -19,8 +19,8 @@ namespace FireQ_1_1.ViewModel
         {
             Console.WriteLine("Constructor - MainViewModel - argument: none");
 
-            ActiveViewModel = new HomeViewModel(this);
-            //ActiveViewModel = new LoginViewModel(this);
+            //ActiveViewModel = new HomeViewModel(this);
+            ActiveViewModel = new LoginViewModel(this);
             UpdateViewCommand = new UpdateViewCommand(this);
 
             
