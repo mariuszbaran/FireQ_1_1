@@ -12,15 +12,15 @@ namespace FireQ_1_1.ViewModel
 {
     class LocalizationViewModel : BaseViewModel
     {
-        private String selectedItem;
-        public String SelectedItem
+        private string selectedItem;
+        public string SelectedItem
         { 
             get { return this.selectedItem; } 
             set 
             { 
                 this.selectedItem = value;
                 OnPropertyChanged(nameof(selectedItem));
-                Properties.Settings.Default.localizationCode = SelectedItem; // do poprawy bo nie tak powinno działać
+                Properties.Settings.Default.localizationCode = SelectedItem;
             } 
         }
         public List<string> List { get; set; }
@@ -33,12 +33,27 @@ namespace FireQ_1_1.ViewModel
             List = new List<string>();
             List.Add("pl-PL");
             List.Add("en");
-            //SelectedItem = Properties.Settings.Default.localizationCode;
-            Save = new SaveLocalizationCommand(mainViewModel);
-            Close = new CancelAndBackToHomeCommand(mainViewModel);
+            SelectedItem = Properties.Settings.Default.localizationCode;
+            SaveCommand = new SaveCommand(this);
+            CloseCommand = new CloseCommand(this);
         }
 
-        public ICommand Save { get; set; }
-        public ICommand Close { get; set; }
+        public ICommand SaveCommand { get; set; }
+
+        public override void Save()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.localizationCode);
+            MessageBox.Show(Properties.Resources.settingsSaved);
+            //Go back to Home view.
+            //MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+            //Save properties permamently.
+            //Properties.Settings.Default.Save();
+        }
+        public ICommand CloseCommand { get; set; }
+
+        public override void Close()
+        {
+            MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+        }
     }
 }

@@ -1,20 +1,23 @@
-﻿using FireQ_1_1.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using FireQ_1_1.ViewModel;
 
 namespace FireQ_1_1.Commands
 {
-    class CancelAndBackToHomeCommand : ICommand
+    public class CloseCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        private MainViewModel mainViewModel;
-        public CancelAndBackToHomeCommand(MainViewModel mainViewModel)
+
+        private BaseViewModel ActiveViewModel { get; set; }
+
+        public CloseCommand(BaseViewModel activeViewModel)
         {
-            this.mainViewModel = mainViewModel;
+            this.ActiveViewModel = activeViewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -24,7 +27,7 @@ namespace FireQ_1_1.Commands
 
         public void Execute(object parameter)
         {
-            mainViewModel.ActiveViewModel = new HomeViewModel(mainViewModel);
+            this.ActiveViewModel.Close();
         }
     }
 }

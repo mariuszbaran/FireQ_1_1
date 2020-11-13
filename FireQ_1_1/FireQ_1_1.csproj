@@ -57,10 +57,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppInit.cs" />
-    <Compile Include="Commands\CancelAndBackToHomeCommand.cs" />
+    <Compile Include="Commands\CloseCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
-    <Compile Include="Commands\SaveLocalizationCommand.cs" />
-    <Compile Include="Commands\SaveSettingsCommand.cs" />
+    <Compile Include="Commands\SaveCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

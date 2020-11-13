@@ -31,13 +31,27 @@ namespace FireQ_1_1.ViewModel
             Console.WriteLine("Constructor - LoginViewModel - argument: mainViewModel");
             User = new User();
             MainViewModel = mainViewModel;
-            LoginCommand = new LoginCommand(MainViewModel,User);       
+            LoginCommand = new LoginCommand(this);       
         }
 
         /// <summary>
-        /// Login Command, veryfies input data with database users
+        /// Login Command execute this.Login();
         /// </summary>
         public ICommand LoginCommand { get; set; }
 
+        /// <summary>
+        /// Checks input data against users table in the database.
+        /// </summary>
+        public void Login()
+        {
+            if (User.Name == "admin" & User.Password == "admin")
+            {
+                MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+            }
+            else
+            {
+                MessageBox.Show(Properties.Resources.invalidLoginData + "\n=============================\nTry:\nUser: admin\nPassword: admin");
+            }
+        }
     }
 }

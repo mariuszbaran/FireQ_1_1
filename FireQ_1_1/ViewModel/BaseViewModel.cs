@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FireQ_1_1.ViewModel
 {
@@ -18,5 +19,9 @@ namespace FireQ_1_1.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public virtual void Save() { }
+        public virtual void Load() { }
+        public virtual void Close() { }
     }
 }

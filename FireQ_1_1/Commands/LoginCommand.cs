@@ -19,13 +19,12 @@ namespace FireQ_1_1.Commands
         
         public event EventHandler CanExecuteChanged;
         
-        public MainViewModel MainViewModel { get; set; }
+        public LoginViewModel LoginViewModel { get; set; }
         public User User { get; set; }
 
-        public LoginCommand(MainViewModel mainViewModel, User user)
+        public LoginCommand(LoginViewModel loginViewModel)
         {
-            MainViewModel = mainViewModel;
-            User = user;
+            LoginViewModel = loginViewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -35,15 +34,7 @@ namespace FireQ_1_1.Commands
 
         public void Execute(object parameter)
         {
-            if (User.Name == "admin" & User.Password == "admin")
-            {
-                MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
-            }
-            else
-            {
-                MessageBox.Show(Properties.Resources.invalidLoginData + "\n=============================\nTry:\nUser: admin\nPassword: admin");
-            }
-
+            LoginViewModel.Login();
         }
     }
 }

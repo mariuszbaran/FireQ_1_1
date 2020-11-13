@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
-
+using FireQ_1_1.ViewModel;
 
 namespace FireQ_1_1.Commands
 {
-    public class SaveSettingsCommand : ICommand
+    public class SaveCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
+
+        private BaseViewModel ActiveViewModel { get; set; } 
+
+        public SaveCommand(BaseViewModel activeViewModel)
+        {
+            this.ActiveViewModel = activeViewModel;
+        }
 
         public bool CanExecute(object parameter)
         {
@@ -20,7 +26,7 @@ namespace FireQ_1_1.Commands
 
         public void Execute(object parameter)
         {
-            MessageBox.Show(Properties.Resources.settingsSaved);
+            this.ActiveViewModel.Save();
         }
     }
 }
