@@ -20,7 +20,6 @@ namespace FireQ_1_1.ViewModel
             { 
                 this.selectedItem = value;
                 OnPropertyChanged(nameof(selectedItem));
-                Properties.Settings.Default.localizationCode = SelectedItem;
             } 
         }
         public List<string> List { get; set; }
@@ -42,10 +41,11 @@ namespace FireQ_1_1.ViewModel
 
         public override void Save()
         {
+            Properties.Settings.Default.localizationCode = SelectedItem;
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.localizationCode);
             MessageBox.Show(Properties.Resources.settingsSaved);
             //Go back to Home view.
-            //MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+            MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
             //Save properties permamently.
             //Properties.Settings.Default.Save();
         }
