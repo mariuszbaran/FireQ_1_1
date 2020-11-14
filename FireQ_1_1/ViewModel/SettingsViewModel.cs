@@ -11,26 +11,34 @@ namespace FireQ_1_1.ViewModel
 {
     public class SettingsViewModel : BaseViewModel
     {
-        public SettingsViewModel(MainViewModel mainViewModel)
+        public SettingsViewModel(BaseViewModel previousViewModel)
         {
-            Console.WriteLine("Constructor - SettingsViewModel - argument: mainViewModel");
-
-            MainViewModel = mainViewModel;
-            SaveCommand = new SaveCommand(this);
-            CloseCommand = new CloseCommand(this);
-
+            Console.WriteLine("Constructor: Settings View Model.");
+            MainViewModel = previousViewModel.MainViewModel;
+            PreviousViewModel = previousViewModel;
+            SaveCommand = new RelayCommand(Save,CanSave);
+            CloseCommand = new RelayCommand(Close,CanClose);
         }
         public ICommand SaveCommand { get; set; }
-
-        public override void Save()
+        private bool CanSave(object parameter)
         {
-
+            return true;
         }
-        public ICommand CloseCommand { get; set; }
-
-        public override void Close()
+        private void Save(object parameter)
         {
-            MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+            Console.WriteLine("Settings View Model - Save Command");
+            MessageBox.Show(Properties.Resources.settingsSaved);
+        }
+
+        public ICommand CloseCommand { get; set; }
+        private bool CanClose(object parameter)
+        {
+            return true;
+        }
+        private void Close(object parameter)
+        {
+            Console.WriteLine("Settings View Model - Close Command");
+            MainViewModel.ActiveViewModel = PreviousViewModel;
         }
     }
 }

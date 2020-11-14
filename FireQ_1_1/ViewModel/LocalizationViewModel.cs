@@ -15,45 +15,55 @@ namespace FireQ_1_1.ViewModel
         private string selectedItem;
         public string SelectedItem
         { 
-            get { return this.selectedItem; } 
+            get { return selectedItem; } 
             set 
             { 
-                this.selectedItem = value;
+                selectedItem = value;
                 OnPropertyChanged(nameof(selectedItem));
             } 
         }
-        public List<string> List { get; set; }
 
-        public LocalizationViewModel(MainViewModel mainViewModel)
+        public Dictionary<string,string> List { get; set; }
+
+        public LocalizationViewModel(BaseViewModel previousViewModel)
         {
-            Console.WriteLine("Constructor - LocalizationViewModel - argument: mainViewModel");
+            Console.WriteLine("Constructor: Localization View Model");
 
-            MainViewModel = mainViewModel;
-            List = new List<string>();
-            List.Add("pl-PL");
-            List.Add("en");
+            MainViewModel = previousViewModel.MainViewModel;
+            PreviousViewModel = previousViewModel;
+            List = new Dictionary<string, string>();
+            List.Add("pl-PL", "PL");
+            List.Add("en", "EN");
             SelectedItem = Properties.Settings.Default.localizationCode;
-            SaveCommand = new SaveCommand(this);
-            CloseCommand = new CloseCommand(this);
+            SaveCommand = new RelayCommand(Save, CanSave);
+            CloseCommand = new RelayCommand(Close, CanClose);
         }
 
         public ICommand SaveCommand { get; set; }
-
-        public override void Save()
+        private bool CanSave(object parameter)
         {
+            return true;
+        }
+        private void Save(object parameter)
+        {
+            Console.WriteLine("Localizatin View Model - Save Command");
             Properties.Settings.Default.localizationCode = SelectedItem;
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.localizationCode);
             MessageBox.Show(Properties.Resources.settingsSaved);
-            //Go back to Home view.
-            MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+            //Go back.
+            MainViewModel.ActiveViewModel = PreviousViewModel;
             //Save properties permamently.
             //Properties.Settings.Default.Save();
         }
         public ICommand CloseCommand { get; set; }
-
-        public override void Close()
+        private bool CanClose(object parameter)
         {
-            MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+            return true;
+        }
+        private void Close(object parameter)
+        {
+            Console.WriteLine("Localization View Model - Close Command");
+            MainViewModel.ActiveViewModel = PreviousViewModel;
         }
     }
 }

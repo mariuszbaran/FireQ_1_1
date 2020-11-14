@@ -14,44 +14,57 @@ namespace FireQ_1_1.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
-        public User user;
+        public LoginViewModel(BaseViewModel previousViewModel)
+        {
+            Console.WriteLine("Constructor: Login View Model");
+            User = new User();
+            MainViewModel = previousViewModel.MainViewModel;
+            PreviousViewModel = previousViewModel;
+            LoginCommand = new RelayCommand(Login, CanLogin);
+            ChangeLocalizationCommand = new RelayCommand(ChangeLocalization, CanChangeLocalization);
+        }
+
+        private User user;
 
         public User User
         {
-            get { return this.user; }
+            get { return user; }
             set
             {
-                this.user = value;
+                user = value;
                 OnPropertyChanged(nameof(user));
             }
         }
 
-        public LoginViewModel(MainViewModel mainViewModel)
-        {
-            Console.WriteLine("Constructor - LoginViewModel - argument: mainViewModel");
-            User = new User();
-            MainViewModel = mainViewModel;
-            LoginCommand = new LoginCommand(this);       
-        }
-
-        /// <summary>
-        /// Login Command execute this.Login();
-        /// </summary>
         public ICommand LoginCommand { get; set; }
 
-        /// <summary>
-        /// Checks input data against users table in the database.
-        /// </summary>
-        public void Login()
+        private bool CanLogin(object paramete)
         {
+            return (User.Name == null || User.Name.Length == 0) ? false : true;
+            //return true;
+        }
+        private void Login(object parameter)
+        {
+            Console.WriteLine("Login View Model - Login Command");
             if (User.Name == "admin" & User.Password == "admin")
             {
-                MainViewModel.ActiveViewModel = new HomeViewModel(MainViewModel);
+                MainViewModel.ActiveViewModel = new HomeViewModel(this);
             }
             else
             {
                 MessageBox.Show(Properties.Resources.invalidLoginData + "\n=============================\nTry:\nUser: admin\nPassword: admin");
             }
+        }
+
+        public ICommand ChangeLocalizationCommand { get; set; }
+        private bool CanChangeLocalization(object parameter)
+        {
+            return true;
+        }
+        private void ChangeLocalization(object parameter)
+        {
+            Console.WriteLine("Login View Model - Change Localization Command");
+            MainViewModel.ActiveViewModel = new LocalizationViewModel(this);
         }
     }
 }

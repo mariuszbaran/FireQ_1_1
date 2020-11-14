@@ -57,10 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppInit.cs" />
-    <Compile Include="Commands\CloseCommand.cs" />
-    <Compile Include="Commands\LoginCommand.cs" />
-    <Compile Include="Commands\SaveCommand.cs" />
-    <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -86,6 +83,7 @@
     <Compile Include="ViewModel\LocalizationViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\NewTestViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>

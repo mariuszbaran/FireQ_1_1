@@ -11,10 +11,10 @@
     <Grid>
         <TextBox Text="{Binding User.Name}" HorizontalAlignment="Left" Height="26" Margin="377,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
         <TextBox Text="{Binding User.Password}" HorizontalAlignment="Left" Height="26" Margin="377,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <Button Command="{Binding LoginCommand}" CommandParameter="Home" Content="{x:Static p:Resources.login}" HorizontalAlignment="Left" Margin="245,235,0,0" VerticalAlignment="Top" Width="290" Height="39"/>
+        <Button Command="{Binding LoginCommand}" Content="{x:Static p:Resources.login}" HorizontalAlignment="Left" Margin="245,235,0,0" VerticalAlignment="Top" Width="290" Height="39"/>
         <Label Content="{x:Static p:Resources.user}" HorizontalAlignment="Left" Margin="245,159,0,0" VerticalAlignment="Top"/>
         <Label Content="{x:Static p:Resources.password}" HorizontalAlignment="Left" Margin="245,190,0,0" VerticalAlignment="Top"/>
         <Label Content="{x:Static p:Resources.login}" HorizontalAlignment="Left" Margin="350,20,0,0" VerticalAlignment="Top" FontSize="20"/>
-
+        <Button Command="{Binding ChangeLocalizationCommand}" Content="{x:Static p:Resources.langChangeButton}" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="40" Height="40"/>
     </Grid>
 </UserControl>

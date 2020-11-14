@@ -10,8 +10,8 @@ namespace FireQ_1_1.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        //refference to Main View Model
         public MainViewModel MainViewModel { get; set; }
+        public BaseViewModel PreviousViewModel { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,9 +19,5 @@ namespace FireQ_1_1.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        public virtual void Save() { }
-        public virtual void Load() { }
-        public virtual void Close() { }
     }
 }

@@ -10,12 +10,12 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Label Content="{x:Static p:Resources.home}" HorizontalAlignment="Left" Margin="350,20,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Command="{Binding UpdateViewCommand}" CommandParameter="Localization" Content="{x:Static p:Resources.langChangeButton}" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="40" Height="40"/>
+        <Button Command="{Binding LocalizationViewCommand}" Content="{x:Static p:Resources.langChangeButton}" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="40" Height="40"/>
         <Button Content="{x:Static p:Resources.newTest}" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" Width="680" Height="40"/>
         <Button Content="{x:Static p:Resources.devices}" HorizontalAlignment="Left" Margin="60,220,0,0" VerticalAlignment="Top" Width="180" Height="40"/>
         <Button Content="{x:Static p:Resources.services}" HorizontalAlignment="Left" Margin="60,280,0,0" VerticalAlignment="Top" Width="180" Height="40"/>
         <Button Content="{x:Static p:Resources.parts}" HorizontalAlignment="Left" Margin="60,340,0,0" VerticalAlignment="Top" Width="180" Height="40"/>
         <Button Content="{x:Static p:Resources.tests}" HorizontalAlignment="Left" Margin="260,220,0,0" VerticalAlignment="Top" Width="180" Height="40"/>
-        <Button Command="{Binding UpdateViewCommand}" CommandParameter="Settings" Content="{x:Static p:Resources.settings}" HorizontalAlignment="Left" Margin="560,340,0,0" VerticalAlignment="Top" Width="180" Height="40"/>
+        <Button Command="{Binding SettingsViewCommand}" Content="{x:Static p:Resources.settings}" HorizontalAlignment="Left" Margin="560,340,0,0" VerticalAlignment="Top" Width="180" Height="40"/>
     </Grid>
 </UserControl>

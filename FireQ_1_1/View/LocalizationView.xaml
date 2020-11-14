@@ -11,6 +11,6 @@
         <Label Content="{x:Static p:Resources.localization}" HorizontalAlignment="Left" Margin="331,23,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button Command="{Binding SaveCommand}" Content="{x:Static p:Resources.save}" Background="Green" HorizontalAlignment="Left" Margin="186,332,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Command="{Binding CloseCommand}" Content="{x:Static p:Resources.close}" Background="Red" HorizontalAlignment="Left" Margin="537,332,0,0" VerticalAlignment="Top" Width="75"/>
-        <ComboBox ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Left" Margin="186,134,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox ItemsSource ="{Binding List}" SelectedValue="{Binding SelectedItem}" SelectedValuePath="Key" DisplayMemberPath="Value" HorizontalAlignment="Left" Margin="186,134,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </UserControl>

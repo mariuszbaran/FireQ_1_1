@@ -7,10 +7,29 @@ using System.Threading.Tasks;
 
 namespace FireQ_1_1.Model
 {
-    public class User
+    public class User : INotifyPropertyChanged
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set 
+            { 
+                name = value;
+                OnPropertyChanged(nameof(name));
+            }
+        }
+
+        private string password;
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                OnPropertyChanged(nameof(password));
+            }
+        }
         public int AccesLevel { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

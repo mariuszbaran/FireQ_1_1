@@ -11,16 +11,35 @@ namespace FireQ_1_1.ViewModel
 {
     public class HomeViewModel : BaseViewModel
     {
-        public ICommand UpdateViewCommand { get; set; }
-        public HomeViewModel(MainViewModel mainViewModel)
+        public HomeViewModel(BaseViewModel previousViewModel)
         {
-            Console.WriteLine("Constructor - HomeViewModel - argument: mainViewModel");
-
-            MainViewModel = mainViewModel;
-            UpdateViewCommand = new UpdateViewCommand(MainViewModel);
-
-            
+            Console.WriteLine("Constructor: Home View Model.");
+            MainViewModel = previousViewModel.MainViewModel;
+            PreviousViewModel = previousViewModel;
+            SettingsViewCommand = new RelayCommand(SettingsView, CanSettingsView);
+            LocalizationViewCommand = new RelayCommand(LocalizationView, CanLocalizationView);
         }
 
+        public ICommand SettingsViewCommand { get; set; }
+        private bool CanSettingsView(object parameter)
+        {
+            return true;
+        }
+        private void SettingsView(object parameter)
+        {
+            Console.WriteLine("Home View Model - Settings View Command");
+            MainViewModel.ActiveViewModel = new SettingsViewModel(this);
+        }
+
+        public ICommand LocalizationViewCommand { get; set; }
+        private bool CanLocalizationView(object parameter)
+        {
+            return true;
+        }
+        private void LocalizationView(object parameter)
+        {
+            Console.WriteLine("Home View Model - Localization View Command");
+            MainViewModel.ActiveViewModel = new LocalizationViewModel(this);
+        }
     }
 }
