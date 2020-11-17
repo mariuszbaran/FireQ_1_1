@@ -2,14 +2,29 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FireQ_1_1.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="connectionString" Type="System.String" Scope="User">
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
       <Value Profile="(Default)">Connection String</Value>
     </Setting>
-    <Setting Name="localizationCode" Type="System.String" Scope="User">
+    <Setting Name="LocalizationCode" Type="System.String" Scope="User">
       <Value Profile="(Default)">en</Value>
     </Setting>
-    <Setting Name="loggedUser" Type="System.String" Scope="User">
+    <Setting Name="LoggedUser" Type="System.String" Scope="User">
       <Value Profile="(Default)">Logged User</Value>
+    </Setting>
+    <Setting Name="LightMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#EEEEEE</Value>
+    </Setting>
+    <Setting Name="DatabasePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:/path</Value>
+    </Setting>
+    <Setting Name="DarkMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#888888</Value>
+    </Setting>
+    <Setting Name="ColorMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#EEEEEE</Value>
+    </Setting>
+    <Setting Name="DarkModeEnebled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

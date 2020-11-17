@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using FireQ_1_1.Model;
 
 namespace FireQ_1_1.ViewModel
 {
@@ -25,10 +26,18 @@ namespace FireQ_1_1.ViewModel
 
         public MainViewModel()
         {
+            //
+            //LoadDefaultUser();
             Console.WriteLine("Constructor: Main View Model.");
             MainViewModel = this;
             //ActiveViewModel = new HomeViewModel(this);
             ActiveViewModel = new LoginViewModel(this);
+        }
+
+        //
+        private void LoadDefaultUser()
+        {
+          
         }
     }
 }

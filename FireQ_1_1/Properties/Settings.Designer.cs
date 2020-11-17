@@ -26,36 +26,96 @@ namespace FireQ_1_1.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Connection String")]
-        public string connectionString {
+        public string ConnectionString {
             get {
-                return ((string)(this["connectionString"]));
+                return ((string)(this["ConnectionString"]));
             }
             set {
-                this["connectionString"] = value;
+                this["ConnectionString"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("en")]
-        public string localizationCode {
+        public string LocalizationCode {
             get {
-                return ((string)(this["localizationCode"]));
+                return ((string)(this["LocalizationCode"]));
             }
             set {
-                this["localizationCode"] = value;
+                this["LocalizationCode"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Logged User")]
-        public string loggedUser {
+        public string LoggedUser {
             get {
-                return ((string)(this["loggedUser"]));
+                return ((string)(this["LoggedUser"]));
             }
             set {
-                this["loggedUser"] = value;
+                this["LoggedUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#EEEEEE")]
+        public string LightMode {
+            get {
+                return ((string)(this["LightMode"]));
+            }
+            set {
+                this["LightMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:/path")]
+        public string DatabasePath {
+            get {
+                return ((string)(this["DatabasePath"]));
+            }
+            set {
+                this["DatabasePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#888888")]
+        public string DarkMode {
+            get {
+                return ((string)(this["DarkMode"]));
+            }
+            set {
+                this["DarkMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#EEEEEE")]
+        public string ColorMode {
+            get {
+                return ((string)(this["ColorMode"]));
+            }
+            set {
+                this["ColorMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DarkModeEnebled {
+            get {
+                return ((bool)(this["DarkModeEnebled"]));
+            }
+            set {
+                this["DarkModeEnebled"] = value;
             }
         }
     }

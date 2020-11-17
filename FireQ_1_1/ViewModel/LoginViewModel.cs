@@ -17,42 +17,47 @@ namespace FireQ_1_1.ViewModel
         public LoginViewModel(BaseViewModel previousViewModel)
         {
             Console.WriteLine("Constructor: Login View Model");
-            User = new User();
             MainViewModel = previousViewModel.MainViewModel;
             PreviousViewModel = previousViewModel;
+
             LoginCommand = new RelayCommand(Login, CanLogin);
             ChangeLocalizationCommand = new RelayCommand(ChangeLocalization, CanChangeLocalization);
         }
 
-        private User user;
-
-        public User User
+        private string userName;
+        
+        public string UserName
         {
-            get { return user; }
+            get { return userName; }
             set
             {
-                user = value;
-                OnPropertyChanged(nameof(user));
+                userName = value;
+                OnPropertyChanged(nameof(userName));
             }
         }
+        public string Password { get; set; }
 
         public ICommand LoginCommand { get; set; }
 
         private bool CanLogin(object paramete)
         {
-            return (User.Name == null || User.Name.Length == 0) ? false : true;
-            //return true;
+            return (UserName == null || UserName.Length == 0) ? false : true;
         }
         private void Login(object parameter)
         {
             Console.WriteLine("Login View Model - Login Command");
-            if (User.Name == "admin" & User.Password == "admin")
+            if (Password == "admin")
             {
+                User LoggedUser = new User();
+                LoggedUser.Name = UserName;
+                LoggedUser.AccessLevel = 2;
+                App.Current.Properties["LoggedUser"] = LoggedUser;
                 MainViewModel.ActiveViewModel = new HomeViewModel(this);
+
             }
             else
             {
-                MessageBox.Show(Properties.Resources.invalidLoginData + "\n=============================\nTry:\nUser: admin\nPassword: admin");
+                MessageBox.Show(Properties.Resources.InvalidLoginData + "\n=============================\nTry:\nUser: <Ener Your Name>\nPassword: admin");
             }
         }
 

@@ -5,12 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FireQ_1_1.View"
              xmlns:p="clr-namespace:FireQ_1_1.Properties"
+             xmlns:vm="clr-namespace:FireQ_1_1.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="{x:Static p:Resources.settings}" HorizontalAlignment="Left" Margin="331,23,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Command="{Binding SaveCommand}" Content="{x:Static p:Resources.save}" HorizontalAlignment="Left" Margin="186,332,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Command="{Binding CloseCommand}" Content="{x:Static p:Resources.close}" HorizontalAlignment="Left" Margin="537,332,0,0" VerticalAlignment="Top" Width="75"/>
-
+        <Label Content="{x:Static p:Resources.Settings}" HorizontalAlignment="Left" Margin="331,23,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="{x:Static p:Resources.DatabasePath}" HorizontalAlignment="Left" Margin="186,141,0,0" VerticalAlignment="Top"/>
+        <Label Content="{x:Static p:Resources.Language}" HorizontalAlignment="Left" Margin="186,209,0,0" VerticalAlignment="Top"/>
+                
+        <CheckBox Content="{x:Static p:Resources.DarkMode}" IsChecked="{Binding DarkMode}" HorizontalAlignment="Left" Margin="186,102,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding DatabasePath}" HorizontalAlignment="Left" Height="23" Margin="186,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426"/>
+        <ComboBox ItemsSource ="{Binding List}" SelectedValue="{Binding SelectedItem}" SelectedValuePath="Key" DisplayMemberPath="Value" HorizontalAlignment="Left" Margin="186,240,0,0" VerticalAlignment="Top" Width="120"/>
+        
+        <Button Command="{Binding SaveCommand}" Content="{x:Static p:Resources.Save}" HorizontalAlignment="Left" Margin="186,332,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding CloseCommand}" Content="{x:Static p:Resources.Close}" HorizontalAlignment="Left" Margin="537,332,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

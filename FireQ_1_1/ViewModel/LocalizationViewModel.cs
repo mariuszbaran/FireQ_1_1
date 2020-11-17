@@ -34,7 +34,7 @@ namespace FireQ_1_1.ViewModel
             List = new Dictionary<string, string>();
             List.Add("pl-PL", "PL");
             List.Add("en", "EN");
-            SelectedItem = Properties.Settings.Default.localizationCode;
+            SelectedItem = Properties.Settings.Default.LocalizationCode;
             SaveCommand = new RelayCommand(Save, CanSave);
             CloseCommand = new RelayCommand(Close, CanClose);
         }
@@ -47,9 +47,9 @@ namespace FireQ_1_1.ViewModel
         private void Save(object parameter)
         {
             Console.WriteLine("Localizatin View Model - Save Command");
-            Properties.Settings.Default.localizationCode = SelectedItem;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.localizationCode);
-            MessageBox.Show(Properties.Resources.settingsSaved);
+            Properties.Settings.Default.LocalizationCode = SelectedItem;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.LocalizationCode);
+            MessageBox.Show(Properties.Resources.SettingsSaved);
             //Go back.
             MainViewModel.ActiveViewModel = PreviousViewModel;
             //Save properties permamently.

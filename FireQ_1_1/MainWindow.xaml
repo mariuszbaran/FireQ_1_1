@@ -7,7 +7,8 @@
         xmlns:p="clr-namespace:FireQ_1_1.Properties"
         xmlns:vm="clr-namespace:FireQ_1_1.ViewModel"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.appTitle}" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Background="{Binding Source={x:Static p:Settings.Default},Path=ColorMode}"
+        Title="{x:Static p:Resources.AppTitle}" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         DataContext="{StaticResource MainViewModel}">
     <Grid>
         <ContentControl Content="{Binding ActiveViewModel}"/>

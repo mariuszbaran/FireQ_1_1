@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using FireQ_1_1.Model;
 
 namespace FireQ_1_1.ViewModel
 {

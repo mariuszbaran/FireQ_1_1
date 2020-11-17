@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FireQ_1_1.Model
 {
-    public class User : INotifyPropertyChanged
+    public class User
     {
         private string name;
         public string Name
@@ -16,7 +16,6 @@ namespace FireQ_1_1.Model
             set 
             { 
                 name = value;
-                OnPropertyChanged(nameof(name));
             }
         }
 
@@ -27,16 +26,16 @@ namespace FireQ_1_1.Model
             set
             {
                 password = value;
-                OnPropertyChanged(nameof(password));
             }
         }
-        public int AccesLevel { get; set; }
+        
+        /*Access Level
+         * 0 - super admin - maintenance 
+         * 1 - admin - Customer level
+         * 2 - super user - Can add, edit, delete.
+         * 3 - user - Can add.
+         */
+        public int AccessLevel { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

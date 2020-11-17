@@ -117,64 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="appTitle" xml:space="preserve">
+  <data name="AppTitle" xml:space="preserve">
     <value>FireQ</value>
   </data>
-  <data name="cancel" xml:space="preserve">
+  <data name="Cancel" xml:space="preserve">
     <value>Anuluj</value>
   </data>
-  <data name="close" xml:space="preserve">
+  <data name="Close" xml:space="preserve">
     <value>Zamknij</value>
   </data>
-  <data name="device" xml:space="preserve">
+  <data name="DarkMode" xml:space="preserve">
+    <value>Tryb Ciemny</value>
+  </data>
+  <data name="DatabasePath" xml:space="preserve">
+    <value>Ścieżka bazy danych</value>
+  </data>
+  <data name="Device" xml:space="preserve">
     <value>Urządzenie</value>
   </data>
-  <data name="devices" xml:space="preserve">
+  <data name="Devices" xml:space="preserve">
     <value>Urządzenia</value>
   </data>
-  <data name="home" xml:space="preserve">
+  <data name="Home" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="invalidLoginData" xml:space="preserve">
+  <data name="InvalidLoginData" xml:space="preserve">
     <value>Nieprawidłowe dane logowani</value>
   </data>
-  <data name="langChangeButton" xml:space="preserve">
+  <data name="LangChangeButton" xml:space="preserve">
     <value>A / #</value>
   </data>
-  <data name="localization" xml:space="preserve">
+  <data name="Language" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="Localization" xml:space="preserve">
     <value>Lokalizacja</value>
   </data>
-  <data name="login" xml:space="preserve">
+  <data name="Login" xml:space="preserve">
     <value>Zaloguj</value>
   </data>
-  <data name="newTest" xml:space="preserve">
+  <data name="NewTest" xml:space="preserve">
     <value>Nowy Test</value>
   </data>
-  <data name="parts" xml:space="preserve">
+  <data name="Parts" xml:space="preserve">
     <value>Części</value>
   </data>
-  <data name="password" xml:space="preserve">
+  <data name="Password" xml:space="preserve">
     <value>Hasło</value>
   </data>
-  <data name="save" xml:space="preserve">
+  <data name="Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
-  <data name="service" xml:space="preserve">
+  <data name="Service" xml:space="preserve">
     <value>Usługa</value>
   </data>
-  <data name="services" xml:space="preserve">
+  <data name="Services" xml:space="preserve">
     <value>Usługi</value>
   </data>
-  <data name="settings" xml:space="preserve">
+  <data name="Settings" xml:space="preserve">
     <value>Ustawienia</value>
   </data>
-  <data name="settingsSaved" xml:space="preserve">
+  <data name="SettingsSaved" xml:space="preserve">
     <value>Ustawienia zostały zapisane</value>
   </data>
-  <data name="tests" xml:space="preserve">
+  <data name="Tests" xml:space="preserve">
     <value>Testy</value>
   </data>
-  <data name="user" xml:space="preserve">
+  <data name="User" xml:space="preserve">
     <value>Użytkownik</value>
   </data>
 </root>

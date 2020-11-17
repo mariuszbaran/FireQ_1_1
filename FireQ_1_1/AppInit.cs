@@ -13,7 +13,7 @@ namespace FireQ_1_1
         public string ConfigPath { get; set; }
         public void Init()
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.localizationCode);
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.LocalizationCode);
         }
     }
 }

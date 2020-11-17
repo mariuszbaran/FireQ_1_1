@@ -117,64 +117,125 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="appTitle" xml:space="preserve">
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddDevice" xml:space="preserve">
+    <value>Add Device</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
     <value>FireQ</value>
   </data>
-  <data name="cancel" xml:space="preserve">
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="close" xml:space="preserve">
+  <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="device" xml:space="preserve">
+  <data name="DarkMode" xml:space="preserve">
+    <value>Dark Mode</value>
+  </data>
+  <data name="DatabasePath" xml:space="preserve">
+    <value>Database Path</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Device" xml:space="preserve">
     <value>Device</value>
   </data>
-  <data name="devices" xml:space="preserve">
+  <data name="Devices" xml:space="preserve">
     <value>Devices</value>
   </data>
-  <data name="home" xml:space="preserve">
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditDevice" xml:space="preserve">
+    <value>Edit Device</value>
+  </data>
+  <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="invalidLoginData" xml:space="preserve">
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="InvalidLoginData" xml:space="preserve">
     <value>Invalid Username or Password</value>
   </data>
-  <data name="langChangeButton" xml:space="preserve">
+  <data name="InventoryNo" xml:space="preserve">
+    <value>Inventory No.</value>
+  </data>
+  <data name="LangChangeButton" xml:space="preserve">
     <value>A / #</value>
   </data>
-  <data name="localization" xml:space="preserve">
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Localization" xml:space="preserve">
     <value>Localization</value>
   </data>
-  <data name="login" xml:space="preserve">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LocalizationImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LocalizationImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="newTest" xml:space="preserve">
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewTest" xml:space="preserve">
     <value>New Test</value>
   </data>
-  <data name="parts" xml:space="preserve">
+  <data name="Parts" xml:space="preserve">
     <value>Parts</value>
   </data>
-  <data name="password" xml:space="preserve">
+  <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="save" xml:space="preserve">
+  <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="service" xml:space="preserve">
+  <data name="Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>Serial No.</value>
+  </data>
+  <data name="Service" xml:space="preserve">
     <value>Service</value>
   </data>
-  <data name="services" xml:space="preserve">
+  <data name="Services" xml:space="preserve">
     <value>Services</value>
   </data>
-  <data name="settings" xml:space="preserve">
+  <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="settingsSaved" xml:space="preserve">
+  <data name="SettingsSaved" xml:space="preserve">
     <value>Settings has been saved</value>
   </data>
-  <data name="tests" xml:space="preserve">
+  <data name="Tests" xml:space="preserve">
     <value>Tests</value>
   </data>
-  <data name="user" xml:space="preserve">
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="User" xml:space="preserve">
     <value>User</value>
   </data>
 </root>
